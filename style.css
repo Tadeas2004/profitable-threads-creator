@@ -875,8 +875,22 @@ section[id] {
 /* This is the starting state: invisible and shifted down 20px */
 .scroll-reveal {
     opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1); /* A "smooth" timing function */
+    transform: translateY(30px); /* Zvětšili jsme pohyb pro lepší efekt, když už to loadujeme dřív */
+    
+    /* Změna transition - specifikujeme vlastnosti pro výkon */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    
+    /* CRITICAL FIX PRO MOBIL: */
+    will-change: opacity, transform; 
+}
+
+/* PŘIDAT: Fallback pro případ, že JS selže nebo se načte pozdě */
+@media (prefers-reduced-motion: reduce) {
+    .scroll-reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
 }
 
 /* This is the state the JS triggers when you scroll to the element */
@@ -1302,13 +1316,16 @@ z-index: 2; /* Aby byla šipka nad pozadím */
 
 /* RESPONZIVITA - MOBIL */
 @media (max-width: 900px) {
+    /* 1. Hlavní karta */
     .luxury-module {
         flex-direction: column-reverse; /* Ikona nahoře, text dole */
         padding: 30px;
         text-align: center;
         gap: 30px;
+        align-items: center; /* Vycentruje ikonu i text */
     }
 
+    /* 2. Texty a seznam */
     .module-desc-luxury {
         max-width: 100%;
         margin-inline: auto;
@@ -1318,6 +1335,34 @@ z-index: 2; /* Aby byla šipka nad pozadím */
         align-items: flex-start;
         max-width: fit-content;
         margin: 0 auto;
+    }
+
+    /* 3. FIX PRO NAČÍTÁNÍ (Drží místo pro ikonu) */
+    .luxury-icon-container {
+        position: relative;
+        width: 140px;      /* Pevná šířka */
+        height: 140px;     /* Pevná výška - zabrání zhroucení při lazy loadu */
+        margin-bottom: 20px;
+        flex-shrink: 0;
+    }
+
+    /* Zmenšení vnitřního obrázku */
+    .module-img-asset-luxury {
+        width: 80px;
+        height: auto;
+    }
+
+    /* Zmenšení glow efektu */
+    .luxury-icon-glow {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* Zmenšení tmavého boxu na pozadí */
+    .luxury-icon-container::after {
+        width: 110px;
+        height: 110px;
+        border-radius: 25px;
     }
 }
 

@@ -60,17 +60,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* --- 3. SCROLL REVEAL (Sekce vyjíždějí při scrollování) --- */
+    /* --- 3. SCROLL REVEAL (Mobile Optimized) --- */
     const revealOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px" // Spustí se trochu dříve než element vyjede úplně nahoru
+        threshold: 0, // Spustit hned, jak se dotkne "zóny"
+        // Desktop: -50px (malé zpoždění pro efekt)
+        // Mobile: 200px (načíst s předstihem 200px pod obrazovkou!)
+        rootMargin: window.innerWidth > 768 ? "0px 0px -50px 0px" : "0px 0px 200px 0px"
     };
 
     const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target); // Přestat sledovat po zobrazení
+                
+                // PERFORMANCE FIX: 
+                // Pokud jsou uvnitř lazy obrázky, vynutíme jejich načtení tím, že je "probudíme"
+                const lazyImages = entry.target.querySelectorAll('img[loading="lazy"]');
+                lazyImages.forEach(img => {
+                    img.setAttribute('loading', 'eager'); // Přepne na okamžité načtení jakmile je sekce "visible"
+                });
+
+                observer.unobserve(entry.target);
             }
         });
     }, revealOptions);
