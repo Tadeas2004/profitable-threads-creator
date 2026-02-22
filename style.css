@@ -1054,6 +1054,12 @@ section[id] {
     padding: 0 10px;
 }
 
+/* Target only the stat-number that belongs to Total Profit */
+.stat-item:last-child .stat-number::before {
+  content: "$";
+  margin-right: 2px;
+}
+
 .stat-number {
     /* Zmenšeno a zjemněno */
     font-size: clamp(1.8rem, 3vw, 2rem); 
@@ -1552,7 +1558,7 @@ z-index: 2; /* Aby byla šipka nad pozadím */
 
 /* --- VODOROVNÉ PŘEŠKRTNUTÍ --- */
 .original-value-strike {
-    font-size: 1.4rem; /* Lehce zmenšeno pro kontrast */
+    font-size: 1.9rem; /* Lehce zmenšeno pro kontrast */
     color: var(--text-gray);
     font-weight: 500;
     position: relative;
@@ -1566,7 +1572,7 @@ z-index: 2; /* Aby byla šipka nad pozadím */
     content: "";
     position: absolute;
     left: -2%;
-    top: 55%; /* Umístění linky přesně doprostřed textu */
+    top: 42%;
     width: 104%;
     height: 3px;
     background-color: var(--primary-neon);
