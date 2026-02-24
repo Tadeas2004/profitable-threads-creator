@@ -1411,6 +1411,7 @@ z-index: 2; /* Aby byla šipka nad pozadím */
 
 /* Zarovnání listu v bonusech na mobilu (aby nebyl na střed, pokud je moc dlouhý) */
 @media (max-width: 900px) {
+    #course .luxury-list, 
     #bonuses .luxury-list {
         text-align: left;
     }
