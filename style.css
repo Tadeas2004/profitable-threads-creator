@@ -1409,10 +1409,11 @@ z-index: 2; /* Aby byla šipka nad pozadím */
     background: linear-gradient(90deg, #FF0033, #80001A); /* Lehce tmavší červená pro odlišení */
 }
 
-/* Zarovnání listu v bonusech na mobilu (aby nebyl na střed, pokud je moc dlouhý) */
 @media (max-width: 900px) {
-    #course .luxury-list, 
-    #bonuses .luxury-list {
+    .luxury-list {
+        align-items: flex-start;
+        max-width: fit-content;
+        margin: 0 auto;
         text-align: left;
     }
 }
