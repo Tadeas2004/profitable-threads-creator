@@ -46,12 +46,14 @@ The product teaches audience building and monetization on Threads. The landing p
 
 ## Project structure
 
-├── src/ # Source code
-│ ├── css/
-│ │ └── style.css
-│ ├── js/
-│ │ └── script.js
-│ └── index.html # Entry point
-├── assets/ # Images, icons, and branding
+```text
+├── src/                 # Source code
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── script.js
+│   └── index.html       # Entry point
+├── assets/              # Images, icons, and branding
 ├── .gitignore
 └── README.md
+```
