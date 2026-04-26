@@ -33,7 +33,6 @@ No frameworks, no build tools — intentional choice to keep the page fast and t
 - **Responsive layout** — mobile-first design, tested across screen sizes
 - **Gumroad checkout** — embedded buy button with direct payment flow
 - **Optimized for conversion** — single CTA, social proof section, benefit-focused copy
-- **16 production deployments** — iterated based on real user feedback
 
 ---
 
