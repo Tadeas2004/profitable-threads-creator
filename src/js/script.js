@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         burger.addEventListener('click', toggleMenu);
 
-        // Zavřít menu při kliknutí na odkaz
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 burger.classList.remove('active');
@@ -21,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* --- 2. INFINITE TICKER LOGIC (Responsive) --- */
+    /* --- 2. INFINITE TICKER LOGIC --- */
     const track = document.getElementById('testimonial-track');
     
     if (track) {
@@ -32,22 +31,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const shouldBeDesktop = window.innerWidth >= 1024;
             
             if (shouldBeDesktop) {
-                // Desktop: Zduplikovat obsah pro nekonečnou smyčku
-                // Kontrola, abychom neduplikovali už zduplikované
                 if (track.innerHTML === originalHTML) {
                      track.innerHTML = originalHTML + originalHTML;
                 }
             } else {
-                // Mobil: Reset na jeden set
                 track.innerHTML = originalHTML;
             }
             isCurrentlyDesktop = shouldBeDesktop;
         };
 
-        // Spustit hned po načtení
         setupTicker();
 
-        // Debounce resize listener (šetří výkon)
         let resizeTimer;
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimer);
@@ -60,11 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* --- 3. SCROLL REVEAL (Mobile Optimized) --- */
+    /* --- 3. SCROLL REVEAL --- */
     const revealOptions = {
-        threshold: 0, // Spustit hned, jak se dotkne "zóny"
-        // Desktop: -50px (malé zpoždění pro efekt)
-        // Mobile: 200px (načíst s předstihem 200px pod obrazovkou!)
+        threshold: 0,
         rootMargin: window.innerWidth > 768 ? "0px 0px -50px 0px" : "0px 0px 200px 0px"
     };
 
@@ -73,8 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
                 
-                // PERFORMANCE FIX: 
-                // Pokud jsou uvnitř lazy obrázky, vynutíme jejich načtení tím, že je "probudíme"
                 const lazyImages = entry.target.querySelectorAll('img[loading="lazy"]');
                 lazyImages.forEach(img => {
                     img.setAttribute('loading', 'eager'); // Přepne na okamžité načtení jakmile je sekce "visible"
@@ -88,8 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.scroll-reveal').forEach(el => revealObserver.observe(el));
 
 
-    /* --- 4. STATS COUNT UP (Počítání čísel) --- */
-    // Funkce je nyní bezpečně uvnitř DOMContentLoaded
+    /* --- 4. STATS COUNT UP --- */
     const countUp = (el) => {
         const target = parseInt(el.getAttribute('data-target'));
         const duration = 2500; // 2.5 sekundy
@@ -99,18 +88,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const elapsed = now - startTime;
             const progress = Math.min(elapsed / duration, 1);
             
-            // Easing: easeOutQuad
             const easeOutQuad = (t) => t * (2 - t);
             const currentCount = Math.floor(easeOutQuad(progress) * target);
             
-            // Formátování s mezerami (např. 16 559 861)
-            // Pokud chceš čárky (americký styl), změň " " na ","
             el.innerText = currentCount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
             if (progress < 1) {
                 requestAnimationFrame(update);
             } else {
-                // Ujistíme se, že na konci je přesné cílové číslo
                 el.innerText = target.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
             }
         };
@@ -122,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 countUp(entry.target);
-                observer.unobserve(entry.target); // Spustit jen jednou
+                observer.unobserve(entry.target);
             }
         });
     }, { threshold: 0.5 });
@@ -138,12 +123,10 @@ document.querySelectorAll('.faq-question').forEach(button => {
     button.addEventListener('click', () => {
         const faqItem = button.parentElement;
         
-        // Zavřít ostatní otevřené otázky (volitelné - pokud chceš, aby byl otevřený jen jeden)
         document.querySelectorAll('.faq-item').forEach(item => {
             if (item !== faqItem) item.classList.remove('active');
         });
 
-        // Přepnout aktuální
         faqItem.classList.toggle('active');
     });
 });
