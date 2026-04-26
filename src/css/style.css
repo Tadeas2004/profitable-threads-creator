@@ -18,16 +18,15 @@
     box-sizing: border-box;
 }
 
-/* SEM VLOŽ TENTO KÓD - To je tvůj nový globální kontejner */
 .container {
-    max-width: var(--max-width); /* Použije tvých 1100px */
-    margin: 0 auto;              /* Vycentruje obsah */
-    padding: 0 30px;             /* Odsazení od krajů na mobilu */
+    max-width: var(--max-width); 
+    margin: 0 auto;
+    padding: 0 30px;
     width: 100%;
 }
 
 html {
-    scroll-behavior: smooth; /* This ensures all # links scroll smoothly */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -43,9 +42,7 @@ img {
     height: auto;
 }
 
-/* Nastavíme odsazení pro všechny sekce, které mají ID (kotvy) */
 section[id] {
-    /* Výška navbaru je 80px + přidáme 20px rezervu, aby nadpis "dýchal" */
     scroll-margin-top: 100px;
 }
 
@@ -76,22 +73,19 @@ section[id] {
 }
 
 /* 3. LOGO */
-/* Target the logo container */
 .nav-logo {
     display: flex;
     align-items: center;
     text-decoration: none;
-    transition: transform 0.3s ease; /* Subtle interaction effect */
+    transition: transform 0.3s ease;
 }
 
-/* Target the image specifically */
 .nav-logo img {
-    height: 45px; /* Adjust this number to make it smaller or bigger */
-    width: auto;  /* Maintains the correct aspect ratio */
+    height: 45px;
+    width: auto;
     display: block;
 }
 
-/* Optional: Slight hover effect for a premium feel */
 .nav-logo:hover {
     transform: scale(1.05);
 }
@@ -129,12 +123,12 @@ section[id] {
 /* 5. HERO SECTION */
 .hero {
     position: relative;
-    padding: 60px 20px; /* Balanced padding top and bottom */
+    padding: 60px 20px;
     min-height: calc(100vh - 80px);
     display: flex;
-    flex-direction: column; /* Stack children vertically if needed */
-    justify-content: center; /* Centers content vertically when direction is column */
-    align-items: center;    /* Centers content horizontally */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-background-effects {
@@ -286,7 +280,7 @@ section[id] {
 .hero-image-wrapper {
     width: 100%;
     display: flex;
-    flex-direction: column; /* Stack image and proof */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 20px;
@@ -301,15 +295,13 @@ section[id] {
     filter: drop-shadow(0 0 50px rgba(255, 0, 51, 0.35)) 
             drop-shadow(0 0 20px rgba(255, 0, 51, 0.2));
     transition: transform 0.5s ease-out;
-    /* ... vaše stávající styly ... */
-    transform: translateZ(0); /* Vynutí samostatnou vrstvu na GPU */
-    backface-visibility: hidden; /* Zabrání problikávání při překreslování */
+    transform: translateZ(0);
+    backface-visibility: hidden;
     will-change: filter, transform;
 }
 
 /* SHARED BASE TESTIMONIAL */
 .testimonial-card {
-    /* Subtle dark grey gradient to stand out on pure black */
     background: linear-gradient(145deg, rgba(35, 35, 35, 0.7) 0%, rgba(10, 10, 10, 0.9) 100%);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 28px;
@@ -331,13 +323,10 @@ section[id] {
     pointer-events: none;
 }
 
-/* FEATURED CARD (Matyas" Fix) */
+/* FEATURED CARD */
 .testimonial-featured {
-    /* 1. Use percentage for width so it shrinks on mobile */
     width: 92%; 
-    /* 2. Boundary: stops it from getting too wide on desktop */
     max-width: 700px; 
-    /* 3. Responsive Padding: gets smaller on mobile */
     padding: clamp(30px, 3vw, 70px) 30px;
     margin: 10px auto;
     text-align: center;
@@ -350,7 +339,6 @@ section[id] {
 }
 
 .testimonial-featured .student-avatar {
-    /* 4. Responsive Image: shrinks on mobile */
     width: clamp(60px, 13vw, 90px) !important;
     height: clamp(60px, 13vw, 90px) !important;
     border-radius: 50% !important;
@@ -360,7 +348,6 @@ section[id] {
 }
 
 .testimonial-featured .student-name {
-    /* 5. Scaling Text: (Min size, dynamic rate, max size) */
     font-size: clamp(1rem, 4vw, 1.6rem);
     font-weight: 700;
     margin-bottom: 5px;
@@ -382,14 +369,14 @@ section[id] {
     font-style: italic;
 }
 
-/* STANDARD TICKER CARDS (Image Left / Text Below) */
+/* STANDARD TICKER CARDS */
 .testimonial-standard {
-    width: 100%;            /* Take full width of the screen */
-    max-width: 420px;       /* But don't grow larger than 420px */
-    min-width: unset;       /* REMOVE the min-width that was forcing it to stay wide */
+    width: 100%;
+    max-width: 420px;
+    min-width: unset;
     display: flex;
     flex-direction: column; 
-    padding: 40px 30px;     /* Slightly smaller padding for mobile */
+    padding: 40px 30px;
     box-sizing: border-box;
 }
 
@@ -481,11 +468,10 @@ section[id] {
 
     .nav-links a {
         font-size: 1.5rem;
-        font-weight: 800; /* Heavier Montserrat for mobile */
+        font-weight: 800;
     }
 }
 
-/* --- Sales Copy & Transformation Sections --- */
 /* SHARED UTILITIES */
 .container-narrow {
     max-width: 800px;
@@ -513,12 +499,9 @@ section[id] {
     width: 100%;
 }
 
-/* 1. Shared Card Logic (Matching the rest of your site) */
+/* Shared Card Logic */
 .glass-card {
-    /* background: rgba(255, 255, 255, 0.03); */
     background: rgba(20, 20, 20, 0.95);
-    /* backdrop-filter: blur(16px); */
-    /* -webkit-backdrop-filter: blur(16px); */
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 20px;
     padding: 2.5rem 2rem;
@@ -533,11 +516,11 @@ section[id] {
 /* Typography Balance */
 .card-label {
     display: block;
-    font-size: 0.85rem; /* Slightly larger for better balance */
+    font-size: 0.85rem;
     font-weight: 750;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    margin-bottom: 1.2rem; /* Tighter gap to the image */
+    margin-bottom: 1.2rem;
     color: var(--text-gray);
 }
 
@@ -553,11 +536,11 @@ section[id] {
 }
 
 .stat-num {
-    font-size: 1.1rem; /* More natural size that doesn't overwhelm the label */
+    font-size: 1.1rem;
     font-weight: 700;
     letter-spacing: 0.02em;
     padding: 8px 16px;
-    border-radius: 100px; /* Makes it a pill */
+    border-radius: 100px;
     display: inline-block;
 }
 
@@ -571,9 +554,9 @@ section[id] {
 /* After Stat: The "Glowing Red Background" effect */
 .after-card .stat-num {
     color: #fff;
-    background: rgba(255, 0, 51, 0.15); /* Soft neon red tint */
+    background: rgba(255, 0, 51, 0.15);
     border: 1px solid rgba(255, 0, 51, 0.4);
-    box-shadow: 0 0 20px rgba(255, 0, 51, 0.2); /* Interior glow */
+    box-shadow: 0 0 20px rgba(255, 0, 51, 0.2);
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
@@ -606,16 +589,16 @@ section[id] {
     color: var(--primary-neon);
     opacity: 0.6;
     flex-shrink: 0;
-    transition: transform 0.3s ease; /* Smoothly animates the rotation */
+    transition: transform 0.3s ease;
 }
 
 @media (max-width: 768px) {
     .large-caps { font-size: 1.8rem; }
     .transformation-flex {
-        flex-direction: column; /* Stacks cards vertically under each other */
+        flex-direction: column;
     }
     .growth-arrow {
-        transform: rotate(90deg); /* Points the arrow down for the vertical stack */
+        transform: rotate(90deg);
         margin: 10px 0;
     }
     .glass-card {
@@ -636,16 +619,13 @@ section[id] {
     line-height: 1.1;
     text-align: center;
     color: var(--text-white);
-
-    /* ÚPRAVA MEZER: */
-    margin-top: 0; /* Rušíme mezeru nad, aby platila ta od šipky */
-    margin-bottom: clamp(32px, 5vw, 56px); /* Mezera pod nadpisem k obsahu */
+    margin-top: 0; 
+    margin-bottom: clamp(32px, 5vw, 56px);
 }
 
 /* THE GRID LOGIC */
 .pain-points-grid {
     display: grid;
-    /* On mobile/tablet, it auto-fills. On desktop, we force 2 columns via media query below */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     width: 100%;
@@ -661,18 +641,18 @@ section[id] {
     display: flex;
     align-items: flex-start;
     gap: 20px;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth hover */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .pain-card:hover {
     background: rgba(255, 0, 51, 0.03);
     border-color: rgba(255, 0, 51, 0.2);
-    transform: translateY(-4px); /* Subtle lift effect */
+    transform: translateY(-4px);
 }
 
 /* ICON STYLING */
 .neon-icon-box {
-    width: 28px; /* Slightly larger for the bigger title */
+    width: 28px; 
     height: 28px;
     min-width: 28px;
     border: 1px solid rgba(255, 0, 51, 0.5);
@@ -705,7 +685,7 @@ section[id] {
 /* MEDIA QUERIES */
 @media (min-width: 992px) {
     .pain-points-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 fixed columns on large screens */
+        grid-template-columns: repeat(2, 1fr);
         max-width: 1000px;
         margin-left: auto;
         margin-right: auto;
@@ -713,9 +693,8 @@ section[id] {
 }
 
 /* --- VISION SECTION --- */
-
 .container-narrow {
-    max-width: 700px; /* Slightly narrower to keep eye travel minimal */
+    max-width: 700px;
     margin: 0 auto;
     padding: 0 24px;
 }
@@ -728,12 +707,10 @@ section[id] {
     text-align: center;
     color: var(--text-white);
 
-    /* Sjednocení mezery od šipky */
     margin-top: 0; 
     margin-bottom: 40px;
 }
 
-/* Ujistíme se, že nadpis Vision nemá margin nahoře */
 .vision-section .vision-title {
     margin-top: 0 !important;
 }
@@ -755,14 +732,12 @@ section[id] {
     margin-bottom: 1.5rem;
 }
 
-/* Highlights & Accents */
 .text-white { color: #fff; }
 
-/* Accents - Dialed down */
 .bold-italic { 
     font-style: italic; 
     font-weight: 500;
-    font-size: 1.3rem; /* More subtle */
+    font-size: 1.3rem;
     color: #fff;
     margin: 1rem 0;
     display: block;
@@ -776,7 +751,6 @@ section[id] {
 }
 
 .large-caps { 
-    /* Significantly smaller to avoid "screaming" */
     font-size: 1.3rem; 
     font-weight: 800; 
     letter-spacing: 0.1em;
@@ -786,22 +760,19 @@ section[id] {
     color: var(--primary-neon);
 }
 
-/* The "Neon Slash" Divider */
 .divider-neon {
     width: 40px;
     height: 2px;
     background: var(--primary-neon);
     margin: 20px auto;
-    opacity: 0.4; /* Softer glow */
+    opacity: 0.4;
 }
 
-/* Making the glowing text actually pop */
 .text-neon {
     color: var(--primary-neon);
 }
 
 .text-glow {
-    /* Very subtle glow so it doesn't vibrate on the screen */
     text-shadow: 0 0 15px rgba(255, 0, 51, 0.3);
 }
 
@@ -815,7 +786,7 @@ section[id] {
 /* MOBILE FIRST: Static Column */
 .ticker-track {
     display: flex;
-    flex-direction: column; /* Na mobilu pod sebou */
+    flex-direction: column;
     align-items: center;
     gap: 24px;
     width: 100%;
@@ -825,15 +796,14 @@ section[id] {
 @media (min-width: 1024px) {
     .ticker-viewport {
         overflow: hidden;
-        /* Maska pro plynulé mizení do stran */
         mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
         -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     }
 
     .ticker-track {
-        flex-direction: row; /* Na desktopu vedle sebe */
+        flex-direction: row;
         width: max-content;
-        gap: 30px; /* Musí být stejný gap všude */
+        gap: 30px;
         animation: ticker-rtl 70s linear infinite;
         will-change: transform;
     }
@@ -850,7 +820,6 @@ section[id] {
     }
 }
 
-/* KLÍČOVÝ BOD: Animace na -50% (polovina zdvojeného pásu) */
 @keyframes ticker-rtl {
     0% {
         transform: translate3d(0, 0, 0);
@@ -862,29 +831,22 @@ section[id] {
 
 /* --- REVIEWS SECTION --- */
 .reviews-section {
-    /* Nastavení horního paddingu na 60px pro sjednocení s Vision sekcí */
     padding: 60px 0 clamp(60px, 8vw, 100px) 0;
     width: 100%;
-    overflow: hidden; /* Zabrání přetečení tickeru do stran */
+    overflow: hidden;
 }
 
 .section-header-v2 {
     margin-bottom: 10px;
 }
 
-/* This is the starting state: invisible and shifted down 20px */
 .scroll-reveal {
     opacity: 0;
-    transform: translateY(30px); /* Zvětšili jsme pohyb pro lepší efekt, když už to loadujeme dřív */
-    
-    /* Změna transition - specifikujeme vlastnosti pro výkon */
+    transform: translateY(30px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    
-    /* CRITICAL FIX PRO MOBIL: */
     will-change: opacity, transform; 
 }
 
-/* PŘIDAT: Fallback pro případ, že JS selže nebo se načte pozdě */
 @media (prefers-reduced-motion: reduce) {
     .scroll-reveal {
         opacity: 1 !important;
@@ -893,7 +855,6 @@ section[id] {
     }
 }
 
-/* This is the state the JS triggers when you scroll to the element */
 .scroll-reveal.is-visible {
     opacity: 1;
     transform: translateY(0);
@@ -901,18 +862,16 @@ section[id] {
 
 /* --- OUTCOME SECTION - FIXED RESPONSIVITY --- */
 .outcome-section {
-    padding: 60px 20px clamp(60px, 8vw, 100px) 20px; /* Fixních 60px nahoře */
+    padding: 60px 20px clamp(60px, 8vw, 100px) 20px;
     background: radial-gradient(circle at 100% 50%, rgba(255, 0, 51, 0.05) 0%, transparent 40%);
 }
 
 .outcome-grid {
     display: grid;
-    /* DEFAULT: 1 sloupec (pro mobil i tablet) */
     grid-template-columns: 1fr; 
     gap: 24px;
     max-width: var(--max-width);
     margin: 48px auto;
-    /* Zajistí centrování karet v mřížce, když jsou pod sebou */
     justify-items: center; 
 }
 
@@ -926,11 +885,9 @@ section[id] {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border-top: 1px solid rgba(255, 0, 51, 0.3);
     background: rgba(255, 255, 255, 0.03);
-    border-radius: 16px; /* Sjednoceno s .pain-card */
-
-    /* KLÍČOVÉ NASTAVENÍ ŠÍŘKY: Adaptace podle testimonial-standard */
+    border-radius: 16px;
     width: 100%;
-    max-width: 420px; /* Stejná šířka jako tvé recenze v tickeru */
+    max-width: 420px;
 }
 
 .outcome-card:hover {
@@ -940,15 +897,14 @@ section[id] {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 0, 51, 0.1);
 }
 
-/* DESKTOP MÓD: Přepnutí na 3 sloupce naráz */
 @media (min-width: 1024px) {
     .outcome-grid {
         grid-template-columns: repeat(3, 1fr);
-        justify-items: stretch; /* Na desktopu vyplní celou šířku sloupce */
+        justify-items: stretch;
     }
     
     .outcome-card {
-        max-width: none; /* Na desktopu se přizpůsobí šířce sloupce (1/3) */
+        max-width: none;
     }
 }
 
@@ -987,7 +943,6 @@ section[id] {
         flex-direction: column;
         align-items: center; 
         text-align: center;
-        /* Padding přizpůsobený pro úzké mobily */
         padding: 30px 20px; 
     }
     
@@ -1000,17 +955,16 @@ section[id] {
 /* --- REVEAL & STATS --- */
 
 .intro-label {
-    font-size: clamp(1rem, 2vw, 1.2rem); /* Větší než běžný text, menší než nadpis */
+    font-size: clamp(1rem, 2vw, 1.2rem);
     font-weight: 500;
-    letter-spacing: 0.3em; /* Vzdušnější pro prémiový vzhled */
-    color: var(--primary-neon); /* Neonová barva pro "Introducing" */
+    letter-spacing: 0.3em;
+    color: var(--primary-neon);
     text-transform: uppercase;
     opacity: 0.9;
 
-    /* Zajištění, že se to nalepí pod šipku */
     margin-top: 0;
     margin-bottom: 15px;
-    display: block; /* Pro jistotu */
+    display: block;
 }
 
 .reveal-section .intro-label {
@@ -1018,7 +972,7 @@ section[id] {
 }
 
 .offer-title {
-    font-size: clamp(2.2rem, 6vw, 3.8rem); /* Přesně mezi H1 a H2 */
+    font-size: clamp(2.2rem, 6vw, 3.8rem);
     font-weight: 500;
     line-height: 1.1;
     letter-spacing: -0.03em;
@@ -1032,7 +986,6 @@ section[id] {
     margin: 0 auto 50px;
 }
 
-/* Zajištění, aby silný text v copy vynikl */
 .reveal-copy strong {
     color: var(--text-white);
     font-weight: 700;
@@ -1043,7 +996,7 @@ section[id] {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 1300px; /* Užší pro lepší hustotu informací */
+    max-width: 1300px;
     margin: 50px auto;
     padding: 20px 0;
 }
@@ -1054,20 +1007,18 @@ section[id] {
     padding: 0 10px;
 }
 
-/* Target only the stat-number that belongs to Total Profit */
 .stat-item:last-child .stat-number::before {
   content: "$";
   margin-right: 2px;
 }
 
 .stat-number {
-    /* Zmenšeno a zjemněno */
     font-size: clamp(1.8rem, 3vw, 2rem); 
-    font-weight: 700; /* Méně tlusté */
+    font-weight: 700; 
     color: var(--text-white);
     line-height: 1;
     margin-bottom: 8px;
-    letter-spacing: -0.05em; /* Čísla jsou více u sebe (clean look) */
+    letter-spacing: -0.05em;
     font-variant-numeric: tabular-nums;
     white-space: nowrap;
 }
@@ -1076,14 +1027,13 @@ section[id] {
     font-size: 0.85rem;
     color: var(--text-gray);
     font-weight: 400;
-    opacity: 0.6; /* Decentnější šedá */
+    opacity: 0.6;
     letter-spacing: 0.01em;
 }
 
-/* TENKÉ ŠEDÉ SEPARÁTORY */
 .stat-divider {
     width: 1px;
-    height: 50px; /* Kratší linka pro elegantní vzhled */
+    height: 50px;
     background: rgba(255, 255, 255, 0.15); /* Jemná šedá */
     flex-shrink: 0;
 }
@@ -1096,7 +1046,7 @@ section[id] {
     }
 
     .stat-divider {
-        width: 40px; /* Horizontální linka na mobilu */
+        width: 40px;
         height: 1px;
         background: rgba(255, 255, 255, 0.1);
     }
@@ -1111,20 +1061,16 @@ section[id] {
 display: flex;
 flex-direction: column;
 align-items: center;
-/* První číslo (80px) je mezera NAD linkou */
-/* Druhé číslo (0) je mezera po stranách */
-/* Třetí číslo (20px) je mezera POD šipkou – tuhle hodnotu snižuj/zvyš dle potřeby */
 margin-top: 80px; 
 margin-bottom: 0px; 
 pointer-events: none;
 position: relative;
-z-index: 2; /* Aby byla šipka nad pozadím */
+z-index: 2;
 }
 
 .divider-line {
     width: 1px;
-    height: 160px; /* Prodlouženo pro dramatický efekt */
-    /* Gradient: Začíná velmi jemně, graduje do syté šedé a končí tvou neonovou červenou */
+    height: 160px;
     background: linear-gradient(to bottom, 
         transparent 0%,
         rgba(255, 255, 255, 0.1) 20%, 
@@ -1135,16 +1081,14 @@ z-index: 2; /* Aby byla šipka nad pozadím */
 
 .divider-arrow {
     margin-top: -2px;
-    filter: drop-shadow(0 0 12px rgba(255, 0, 51, 0.6)); /* Silnější záře pro delší linku */
+    filter: drop-shadow(0 0 12px rgba(255, 0, 51, 0.6));
 }
 
 .divider-arrow svg {
-    /* Mírně zvětšíme šipku, aby seděla k delší lince */
     width: 34px;
     height: 20px;
 }
 
-/* Responzivní úprava - na mobilu ji necháme mírně kratší, aby nezabírala celou obrazovku */
 @media (max-width: 768px) {
     .section-divider-wrap {
         margin: 50px 0;
@@ -1157,7 +1101,7 @@ z-index: 2; /* Aby byla šipka nad pozadím */
 /* --- MODULES STACK --- */
 .modules-stack {
     width: 100%;
-    max-width: var(--max-width); /* 1100px */
+    max-width: var(--max-width);
     margin: 40px auto 0;
     display: flex;
     flex-direction: column;
@@ -1169,18 +1113,14 @@ z-index: 2; /* Aby byla šipka nad pozadím */
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    
-    /* Klíč pro šířku: Hodně místa do stran, akorát nahoře/dole */
     padding: 50px 70px; 
-    
     text-align: left;
     gap: 50px;
     border-radius: 24px;
     border: 1px solid rgba(255, 255, 255, 0.05);
-    border-top: 1px solid rgba(255, 0, 51, 0.35); /* Neonová linka nahoře */
+    border-top: 1px solid rgba(255, 0, 51, 0.35);
     background: linear-gradient(155deg, rgba(18, 18, 18, 0.98) 0%, rgba(5, 5, 5, 1) 100%);
     
-    /* Zajištění plné šířky kontejneru */
     width: 100%;
     max-width: none !important; 
     min-height: auto;
@@ -1189,16 +1129,12 @@ z-index: 2; /* Aby byla šipka nad pozadím */
     overflow: hidden;
 }
 
-/* 1. Základ (Mobil) - necháme to tak, jak to je, nebo jen malinkou korekci */
 .modules-header {
-    /* Na mobilu se spoléháme na mezeru od šipky, případně přidáme kousek */
     margin-top: 10px !important; 
 }
 
-/* 2. Desktop (Notebooky a větší monitory) */
 @media (min-width: 1024px) {
     .modules-header {
-        /* Tady to "odlepíme" od šipky, aby to dýchalo */
         margin-top: 60px !important; 
     }
 }
@@ -1229,7 +1165,7 @@ z-index: 2; /* Aby byla šipka nad pozadím */
 }
 
 .module-title-luxury {
-    font-size: clamp(1.8rem, 3.5vw, 2.4rem); /* Masivní nadpis */
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
     font-weight: 600;
     line-height: 1.1;
     letter-spacing: -0.04em;
@@ -1269,13 +1205,11 @@ z-index: 2; /* Aby byla šipka nad pozadím */
     width: 22px;
     height: 22px;
     flex-shrink: 0;
-    /* SVG pečeť/starburst v barvě tvého brandu */
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FF0033'%3E%3Cpath d='M12 1L14.4 5.3L19.3 4.3L18.3 9.2L22.6 11.6L18.3 14L19.3 18.9L14.4 17.9L12 22.2L9.6 17.9L4.7 18.9L5.7 14L1.4 11.6L5.7 9.2L4.7 4.3L9.6 5.3L12 1Z'/%3E%3Cpath d='M9 12L11 14L15 10' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
     background-size: contain;
     background-repeat: no-repeat;
 }
 
-/* PRAVÁ STRANA - IKONA */
 .luxury-icon-container {
     position: relative;
     width: 220px;
@@ -1283,10 +1217,9 @@ z-index: 2; /* Aby byla šipka nad pozadím */
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0; /* Ikona se nikdy nezmáčkne */
+    flex-shrink: 0;
 }
 
-/* Glow za ikonou */
 .luxury-icon-glow {
     position: absolute;
     width: 140px;
@@ -1297,7 +1230,6 @@ z-index: 2; /* Aby byla šipka nad pozadím */
     z-index: 0;
 }
 
-/* Box pro ikonu */
 .luxury-icon-container::after {
     content: "";
     position: absolute;
@@ -1305,33 +1237,27 @@ z-index: 2; /* Aby byla šipka nad pozadím */
     height: 170px;
     background: linear-gradient(135deg, rgba(30, 30, 30, 0.9) 0%, rgba(5, 5, 5, 1) 100%);
     border-radius: 35px;
-
-    /* PŘIDÁNÍ NEON BORDERU */
     border: 1px solid var(--primary-neon); 
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 0, 51, 0.2); 
-
     z-index: 1;
 }
 
 .module-img-asset-luxury {
     position: relative;
     z-index: 2;
-    width: 115px; /* Velikost ikony */
+    width: 115px;
     height: auto;
 }
 
-/* RESPONZIVITA - MOBIL */
 @media (max-width: 900px) {
-    /* 1. Hlavní karta */
     .luxury-module {
-        flex-direction: column-reverse; /* Ikona nahoře, text dole */
+        flex-direction: column-reverse;
         padding: 30px;
         text-align: center;
         gap: 30px;
-        align-items: center; /* Vycentruje ikonu i text */
+        align-items: center;
     }
 
-    /* 2. Texty a seznam */
     .module-desc-luxury {
         max-width: 100%;
         margin-inline: auto;
@@ -1343,28 +1269,24 @@ z-index: 2; /* Aby byla šipka nad pozadím */
         margin: 0 auto;
     }
 
-    /* 3. FIX PRO NAČÍTÁNÍ (Drží místo pro ikonu) */
     .luxury-icon-container {
         position: relative;
-        width: 140px;      /* Pevná šířka */
-        height: 140px;     /* Pevná výška - zabrání zhroucení při lazy loadu */
+        width: 140px;
+        height: 140px;
         margin-bottom: 20px;
         flex-shrink: 0;
     }
 
-    /* Zmenšení vnitřního obrázku */
     .module-img-asset-luxury {
         width: 80px;
         height: auto;
     }
 
-    /* Zmenšení glow efektu */
     .luxury-icon-glow {
         width: 100px;
         height: 100px;
     }
 
-    /* Zmenšení tmavého boxu na pozadí */
     .luxury-icon-container::after {
         width: 110px;
         height: 110px;
@@ -1377,7 +1299,6 @@ z-index: 2; /* Aby byla šipka nad pozadím */
     padding-bottom: 0;
 }
 
-/* Tlačítko pro Tutoriál (Bonus 01) */
 .btn-tutorial {
     display: inline-flex;
     align-items: center;
@@ -1404,9 +1325,8 @@ z-index: 2; /* Aby byla šipka nad pozadím */
     font-size: 0.8rem;
 }
 
-/* Úprava barvy badge pro bonusy (volitelné - pokud chceš, aby vypadaly trošku jinak než moduly) */
 #bonuses .module-number-badge {
-    background: linear-gradient(90deg, #FF0033, #80001A); /* Lehce tmavší červená pro odlišení */
+    background: linear-gradient(90deg, #FF0033, #80001A);
 }
 
 @media (max-width: 900px) {
@@ -1429,7 +1349,6 @@ z-index: 2; /* Aby byla šipka nad pozadím */
     padding-bottom: 8px;
 }
 
-/* Hand-drawn underline efekt */
 .card-value-tag::after, .value-highlight::after {
     content: "";
     position: absolute;
@@ -1487,7 +1406,7 @@ z-index: 2; /* Aby byla šipka nad pozadím */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px; /* Jemná mezera mezi hodnotami */
+    gap: 8px;
     margin: 20px 0 35px;
 }
 
@@ -1506,14 +1425,14 @@ z-index: 2; /* Aby byla šipka nad pozadím */
 }
 
 .pricing-features {
-    display: inline-flex;    /* Důležité: Blok se smrští podle nejdelšího řádku */
-    flex-direction: column;  /* Položky zůstanou pod sebou */
-    align-items: flex-start; /* Zarovná ikony a text vlevo pod sebe */
-    text-align: left;        /* Jistota pro zarovnání textu */
-    margin: 0 auto 40px;     /* Vycentruje celý tento blok v pricing kartě */
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    margin: 0 auto 40px;
     gap: 12px !important;
     padding: 0;
-    list-style: none;        /* Odstraní případné defaultní tečky */
+    list-style: none;
 }
 
 .pricing-features li {
@@ -1531,18 +1450,16 @@ z-index: 2; /* Aby byla šipka nad pozadím */
     opacity: 0.7;
 }
 
-/* --- CENA: ČISTÝ A JEDNOTNÝ STYL --- */
 .price-display {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0; /* Těsnější sepětí */
+    gap: 0;
 }
 
 .main-price {
-    /* Zmenšeno z 6rem na 4.5rem pro lepší balanc */
     font-size: clamp(3.5rem, 10vw, 4.5rem); 
-    font-weight: 700; /* Mírně zjemněno z 800 */
+    font-weight: 700;
     color: #fff;
     line-height: 1;
     letter-spacing: -0.03em;
@@ -1550,22 +1467,19 @@ z-index: 2; /* Aby byla šipka nad pozadím */
     align-items: baseline;
 }
 
-/* Sjednocení dolaru s číslem */
 .price-display .currency {
-    font-size: 0.9em; /* Přebírá přesnou velikost od .main-price */
+    font-size: 0.9em;
     color: #fff;
-    font-weight: 800; /* Stejná tloušťka */
-    margin-right: 4px; /* Malá mezera mezi $ a 29 */
+    font-weight: 800;
+    margin-right: 4px;
 }
 
-/* --- VODOROVNÉ PŘEŠKRTNUTÍ --- */
 .original-value-strike {
-    font-size: 1.9rem; /* Lehce zmenšeno pro kontrast */
+    font-size: 1.9rem;
     color: var(--text-gray);
     font-weight: 500;
     position: relative;
     opacity: 0.6;
-    /* PŘIDÁNO: Větší mezery mezi čísly */
     letter-spacing: 0.05em; 
     text-transform: uppercase;
 }
@@ -1578,7 +1492,7 @@ z-index: 2; /* Aby byla šipka nad pozadím */
     width: 104%;
     height: 3px;
     background-color: var(--primary-neon);
-    transform: rotate(0deg); /* Změněno na vodorovné */
+    transform: rotate(0deg);
     border-radius: 2px;
     box-shadow: 0 0 8px rgba(255, 0, 51, 0.3);
 }
@@ -1589,14 +1503,13 @@ z-index: 2; /* Aby byla šipka nad pozadím */
 
 /* --- FAQ SECTION --- */
 .faq-section {
-    padding: 20px 0 100px 0; /* První číslo (20px) je mezera nahoře, druhé (0) boky, třetí (100px) spodek */
+    padding: 20px 0 100px 0;
 }
 
 .faq-accordion {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    /* Vynutí vycentrování všech dceřiných elementů (faq-item) na střed */
     align-items: center; 
     width: 100%;
 }
@@ -1607,10 +1520,9 @@ z-index: 2; /* Aby byla šipka nad pozadím */
     overflow: hidden;
     transition: border-color 0.3s ease, transform 0.3s ease;
     
-    /* PŘEPSÁNÍ GLOBÁLNÍHO LIMITU: */
     width: 100%; 
-    max-width: 750px; /* FAQ bude širší než běžná karta, aby vypadalo lépe */
-    margin: 0 auto;   /* Pojistka pro vycentrování */
+    max-width: 750px;
+    margin: 0 auto;
 }
 
 .faq-item:hover {
@@ -1641,7 +1553,6 @@ z-index: 2; /* Aby byla šipka nad pozadím */
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Ikona "PLUS" pomocí pseudoprvků */
 .faq-icon::before, .faq-icon::after {
     content: "";
     position: absolute;
@@ -1652,10 +1563,9 @@ z-index: 2; /* Aby byla šipka nad pozadím */
     border-radius: 2px;
 }
 
-.faq-icon::before { width: 100%; height: 2px; } /* Horizontální čára */
-.faq-icon::after { width: 2px; height: 100%; }  /* Vertikální čára */
+.faq-icon::before { width: 100%; height: 2px; }
+.faq-icon::after { width: 2px; height: 100%; }
 
-/* Aktivní stav - Rotace a skrytí vertikální čáry pro efekt MÍNUS */
 .faq-item.active .faq-icon {
     transform: rotate(180deg);
 }
@@ -1672,7 +1582,7 @@ z-index: 2; /* Aby byla šipka nad pozadím */
 }
 
 .faq-item.active .faq-answer {
-    max-height: 200px; /* Dostatečná rezerva pro text */
+    max-height: 200px;
     padding-bottom: 25px;
 }
 
@@ -1684,14 +1594,13 @@ z-index: 2; /* Aby byla šipka nad pozadím */
 
 /* --- SITE FOOTER --- */
 .site-footer {
-    padding: 80px 0 40px; /* Horní padding pro prostor, spodní pro zakončení */
+    padding: 80px 0 40px;
     background-color: var(--bg-dark);
 }
 
 .footer-line {
     width: 100%;
     height: 1px;
-    /* Velmi jemný gradient od středu do ztracena */
     background: linear-gradient(90deg, 
         transparent 0%, 
         rgba(255, 255, 255, 0.05) 50%, 
@@ -1703,12 +1612,11 @@ z-index: 2; /* Aby byla šipka nad pozadím */
 .footer-copy {
     font-size: 0.85rem;
     color: var(--text-gray);
-    opacity: 0.5; /* Decentní vzhled */
+    opacity: 0.5;
     letter-spacing: 0.05em;
     font-weight: 400;
 }
 
-/* Jemný hover efekt na textu pro interaktivitu */
 .footer-copy:hover {
     opacity: 0.8;
     transition: opacity 0.3s ease;
